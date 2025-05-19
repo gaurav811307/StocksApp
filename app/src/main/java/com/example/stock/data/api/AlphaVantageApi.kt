@@ -14,13 +14,13 @@ interface AlphaVantageApi {
         @Query("apikey") apiKey: String = com.example.stock.utils.Constants.API_KEY
     ): TopGainersLosers
 
-    @GET("query?function=OVERVIEW")
+    @GET("query?function=OVERVIEW&symbol=IBM&apikey=demo")
     suspend fun getCompanyOverview(
         @Query("symbol") symbol: String,
         @Query("apikey") apiKey: String = com.example.stock.utils.Constants.API_KEY
     ): StockDetail
 
-    @GET("query?function=TIME_SERIES_DAILY")
+    @GET("query?function=SYMBOL_SEARCH&keywords=tesco&apikey=demo")
     suspend fun getDailyTimeSeries(
         @Query("symbol") symbol: String,
         @Query("apikey") apiKey: String = com.example.stock.utils.Constants.API_KEY
